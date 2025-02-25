@@ -61,9 +61,9 @@
             label1.AutoSize = true;
             label1.Location = new Point(28, 42);
             label1.Name = "label1";
-            label1.Size = new Size(79, 15);
+            label1.Size = new Size(99, 15);
             label1.TabIndex = 1;
-            label1.Text = "Select Version";
+            label1.Text = "Versions available";
             // 
             // updateVersionButton
             // 
@@ -118,7 +118,7 @@
             groupBox1.Size = new Size(357, 100);
             groupBox1.TabIndex = 6;
             groupBox1.TabStop = false;
-            groupBox1.Text = "Inatall version";
+            groupBox1.Text = "Install version";
             // 
             // installVersionLabel
             // 
@@ -132,6 +132,7 @@
             // 
             // InstallButton
             // 
+            InstallButton.Enabled = false;
             InstallButton.Location = new Point(186, 46);
             InstallButton.Name = "InstallButton";
             InstallButton.Size = new Size(75, 23);

@@ -40,9 +40,6 @@ namespace NVM_GUI
 
             this.GetNMVList();
             this.ValidateVersionComboBox();
-
-            InstallButton.Enabled = false;
-
         }
 
         private void UpdateVersionBtn_Click(object sender, EventArgs e)
