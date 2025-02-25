@@ -32,6 +32,10 @@ For **NVM_GUI** to work correctly, the [NVM executable](https://github.com/nvm-s
 2. Choose the Node.js version you want to use.
 3. Click on "Use" to switch versions or "Install" to add new versions.
 
+##  Example
+![image](https://github.com/user-attachments/assets/f65fe8b6-487d-4a57-9adb-50a0c3f3070f)
+
+
 ## Contributing
 
 We welcome contributions to **NVM_GUI**! If you'd like to help improve the project, feel free to fork the repository, open an issue, or submit a pull request.
