@@ -33,7 +33,8 @@ For **NVM_GUI** to work correctly, the [NVM executable](https://github.com/nvm-s
 3. Click on "Use" to switch versions or "Install" to add new versions.
 
 ##  Example
-![image](https://github.com/user-attachments/assets/f65fe8b6-487d-4a57-9adb-50a0c3f3070f)
+![image](https://github.com/user-attachments/assets/22c69983-f290-4de7-a5cb-f9d76d00da5a)
+
 
 
 ## Contributing
