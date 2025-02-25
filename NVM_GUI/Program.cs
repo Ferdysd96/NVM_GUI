@@ -17,9 +17,9 @@ namespace NVM_GUI
         }
 
         /**
-        * Show a message from nvm
-        * @param output Message to show
-        */
+          * Show a message from nvm
+          * @param output Message to show
+          */
         public static void ShowCustomMessage(string output)
         {
             if (output.Contains("error", StringComparison.CurrentCultureIgnoreCase))
@@ -33,11 +33,11 @@ namespace NVM_GUI
         }
 
         /**
-        * Run a command in the terminal
-        * @param command Command to run
-        * @return string Output of the command
-        */
-        public static string RunCommand(string command)
+          * Run a command in the terminal
+          * @param command Command to run
+          * @return string Output of the command
+          */
+        public static string RunCommand(string command, bool showMessage = true)
         {
             try
             {
@@ -60,14 +60,23 @@ namespace NVM_GUI
 
                 if (!string.IsNullOrWhiteSpace(error))
                 {
-                    MessageBox.Show("Error:\n" + error);
+                    if (showMessage)
+                    {
+                        MessageBox.Show("Error:\n" + error);
+                    }
+
+                    return string.Empty;
                 }
 
                 return output;
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error:\n" + ex.Message);
+                if (showMessage)
+                { 
+                    MessageBox.Show("Error:\n" + ex.Message);
+                }
+
                 return string.Empty;
             }
         }

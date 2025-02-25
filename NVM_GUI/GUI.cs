@@ -12,6 +12,7 @@ namespace NVM_GUI
         private static partial Regex VersionCleanerRegex();
 
         static readonly string NvmUrl = "https://github.com/coreybutler/nvm-windows";
+        static string ? nvmVersion;
 
         public GUI()
         {
@@ -29,22 +30,36 @@ namespace NVM_GUI
         }
 
         private void GUI_Load(object sender, EventArgs e)
-        {
+        {   
+            this.SetVersion();
+
+            if (string.IsNullOrEmpty(nvmVersion)) 
+            {
+                return;
+            }
+
             this.GetNMVList();
             this.ValidateVersionComboBox();
+
         }
 
         private void UpdateVersionBtn_Click(object sender, EventArgs e)
         {
             string version = versionComboBox.Text;
 
-            if (string.IsNullOrEmpty(version))
+            if (!ValidVersion().IsMatch(version))
             {
-                MessageBox.Show("No version has been selected.");
+                MessageBox.Show("Invalid version selected.");
+
                 return;
             }
 
             string output = Program.RunCommand($"nvm use {version}");
+
+            if (string.IsNullOrEmpty(output))
+            {
+                return;
+            }
 
             Program.ShowCustomMessage(output);
 
@@ -86,6 +101,10 @@ namespace NVM_GUI
             string command = IsVersionIntalled ? "nvm uninstall" : "nvm install";
 
             string output = Program.RunCommand($"{command} {versionTextBox.Text.Trim()}");
+
+            if (string.IsNullOrEmpty(output)) { 
+                return;
+            }
 
             Program.ShowCustomMessage(output);
             this.GetNMVList();
@@ -129,6 +148,11 @@ namespace NVM_GUI
         private void GetNMVList()
         {
             string output = Program.RunCommand("nvm list");
+
+            if (string.IsNullOrEmpty(output) || output.Contains("recognized"))
+            {
+                return;
+            }
 
             List<string> versions = [.. output.Split(['\r', '\n'], StringSplitOptions.RemoveEmptyEntries)
                                  .Select(line => line.Trim())
@@ -182,6 +206,26 @@ namespace NVM_GUI
                 noVersionSelectedLabel.Hide();
                 updateVersionButton.Enabled = true;
             }
+        }
+
+        private void SetVersion()
+        {
+            string output = Program.RunCommand("nvm --version", false);
+
+            if (string.IsNullOrEmpty(output))
+            {
+               InstallButton.Enabled = false;
+               updateVersionButton.Enabled = false;
+
+               this.Text = $"{this.Text} - NVM Version: Not installed";
+
+                return;
+
+            }
+
+            nvmVersion = output.Trim();
+
+            this.Text = $"{this.Text} - NVM Version: {nvmVersion}";
         }
     }
 }
