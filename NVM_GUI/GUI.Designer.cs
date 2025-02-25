@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GUI));
             versionComboBox = new ComboBox();
             label1 = new Label();
@@ -39,7 +40,10 @@
             installVersionLabel = new Label();
             InstallButton = new Button();
             versionTextBox = new TextBox();
+            helpPictureBox = new PictureBox();
+            helpTooltip = new ToolTip(components);
             groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)helpPictureBox).BeginInit();
             SuspendLayout();
             // 
             // versionComboBox
@@ -144,11 +148,24 @@
             versionTextBox.TabIndex = 0;
             versionTextBox.TextChanged += VersionTextBox_TextChanged;
             // 
+            // helpPictureBox
+            // 
+            helpPictureBox.BackgroundImage = Properties.Resources._40797_help_blue_icon;
+            helpPictureBox.BackgroundImageLayout = ImageLayout.Stretch;
+            helpPictureBox.Location = new Point(274, 22);
+            helpPictureBox.Name = "helpPictureBox";
+            helpPictureBox.Size = new Size(99, 88);
+            helpPictureBox.TabIndex = 7;
+            helpPictureBox.TabStop = false;
+            helpTooltip.SetToolTip(helpPictureBox, "If you have already installed NVM and it is not recognized, restarting \r\nyour PC to reload the environment variables may fix the issue.");
+            helpPictureBox.Visible = false;
+            // 
             // GUI
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(417, 283);
+            Controls.Add(helpPictureBox);
             Controls.Add(groupBox1);
             Controls.Add(label2);
             Controls.Add(nvmLinkLabel);
@@ -165,6 +182,7 @@
             Load += GUI_Load;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)helpPictureBox).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -181,5 +199,7 @@
         private TextBox versionTextBox;
         private Button InstallButton;
         private Label installVersionLabel;
+        private PictureBox helpPictureBox;
+        private ToolTip helpTooltip;
     }
 }
