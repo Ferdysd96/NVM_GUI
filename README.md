@@ -17,7 +17,7 @@ For **NVM_GUI** to work correctly, the [NVM executable](https://github.com/nvm-s
 
 ### Installation Instructions:
 
-1. Download the **NVM_GUI** executable from the [Releases](https://github.com/your_username_here/NVM_GUI/releases) section.
+1. Download the **NVM_GUI** executable from the [exe.zip](https://github.com/Ferdysd96/NVM_GUI/raw/refs/heads/master/NVM%20GUI.zip) section.
 2. Follow the setup instructions in the installer to get **NVM_GUI** up and running.
 
 ## Features
@@ -38,7 +38,7 @@ We welcome contributions to **NVM_GUI**! If you'd like to help improve the proje
 
 ## License
 
-This project is licensed under the [MIT License](LICENSE).
+This project is licensed under the [MIT License](https://github.com/Ferdysd96/NVM_GUI/blob/master/LICENSE.txt).
 
 ## Acknowledgments
 
