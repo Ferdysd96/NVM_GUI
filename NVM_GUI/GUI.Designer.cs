@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GUI));
             versionComboBox = new ComboBox();
             label1 = new Label();
             updateVersionButton = new Button();
@@ -156,6 +157,7 @@
             Controls.Add(label1);
             Controls.Add(versionComboBox);
             FormBorderStyle = FormBorderStyle.FixedDialog;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
             Name = "GUI";
             StartPosition = FormStartPosition.CenterScreen;
