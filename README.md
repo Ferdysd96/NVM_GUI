@@ -1,6 +1,6 @@
 # NVM_GUI FOR WINDOWS
 
-**NVM_GUI** is a graphical user interface (GUI) for the popular command-line tool [NVM (Node Version Manager)](https://github.com/nvm-sh/nvm), designed to make managing multiple Node.js versions on your system easier and more visual.
+**NVM_GUI** is a graphical user interface (GUI) for the popular command-line tool [NVM (Node Version Manager)](https://github.com/coreybutler/nvm-windows), designed to make managing multiple Node.js versions on your system easier and more visual.
 
 ## Download
 The application, including the `.exe` file, is available in the following ZIP archive:
@@ -46,5 +46,5 @@ This project is licensed under the [MIT License](https://github.com/Ferdysd96/NV
 
 ## Acknowledgments
 
-This project relies on [NVM](https://github.com/nvm-sh/nvm) for managing Node.js versions. A big thanks to the NVM team for their great work!
+This project relies on [NVM-WINDOWS](https://github.com/coreybutler/nvm-windows) for managing Node.js versions. A big thanks to the NVM team for their great work!
 
