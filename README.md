@@ -1,4 +1,4 @@
-# NVM_GUI FOR WINDOWS
+# NVM GUI FOR WINDOWS
 
 **NVM_GUI** is a graphical user interface (GUI) for the popular command-line tool [NVM (Node Version Manager)](https://github.com/coreybutler/nvm-windows), designed to make managing multiple Node.js versions on your system easier and more visual.
 
